@@ -15,9 +15,9 @@
 This project aims to install a self-managed Argo CD using the App of App pattern. Full instructions and explanation can be found in the Medium article [Self Managed Argo CD — App Of Everything](https://medium.com/devopsturkiye/self-managed-argo-cd-app-of-everything-a226eb100cf0).
 
 # Clone Repository
-Clone kurtburak/argocd repository to your local device.
+Clone teekwan/argocd repository to your local device.
 ```
-git clone https://github.com/kurtburak/argocd.git
+git clone https://github.com/teekwan/argocd.git
 ```
 # Create Local Kubernetes Cluster
 Intall kind.
@@ -64,7 +64,7 @@ server:
   config:
     repositories: |
       - type: git
-        url: https://github.com/kurtburak/argocd.git
+        url: https://github.com/teekwan/argocd.git
       - name: argo-helm
         type: helm
         url: https://argoproj.github.io/argo-helm
@@ -82,7 +82,7 @@ server:
           - values.yaml
           - ../values-override.yaml
         path: argocd-install/argo-cd
-        repoURL: https://github.com/kurtburak/argocd.git
+        repoURL: https://github.com/teekwan/argocd.git
         targetRevision: HEAD
       syncPolicy:
         syncOptions:
@@ -95,7 +95,7 @@ server:
       project: argocd
       source:
         path: argocd-apps
-        repoURL: https://github.com/kurtburak/argocd.git
+        repoURL: https://github.com/teekwan/argocd.git
         targetRevision: HEAD
         directory:
           recurse: true
@@ -112,7 +112,7 @@ server:
       project: argocd
       source:
         path: argocd-appprojects
-        repoURL: https://github.com/kurtburak/argocd.git
+        repoURL: https://github.com/teekwan/argocd.git
         targetRevision: HEAD
         directory:
           recurse: true
@@ -224,7 +224,7 @@ spec:
   project: sample-project
   source:
     path: sample-app/
-    repoURL: https://github.com/kurtburak/argocd.git
+    repoURL: https://github.com/teekwan/argocd.git
     targetRevision: HEAD
   syncPolicy:
     syncOptions:
